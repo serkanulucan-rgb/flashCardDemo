@@ -1,3 +1,5 @@
+# Flashcard App Specification
+
 ## Overview
 A lightweight flashcard application for learning and revising topics through question-and-answer study cards. The app should support creating decks, studying cards, tracking progress, and reviewing difficult cards more often.
 
@@ -17,6 +19,7 @@ A lightweight flashcard application for learning and revising topics through que
 - View all decks in a dashboard
 - Search or filter decks by name
 
+<<<<<<< HEAD
 ### 2. Intent-Based Categorization 
 - Each card can be assigned to one or more intent categories
 - Categories represent the purpose or context of the content, such as:
@@ -36,21 +39,21 @@ A lightweight flashcard application for learning and revising topics through que
 - Category statistics show how many cards are due or mastered in each category
 
 ### 3. Card Management
+=======
+### 2. Card Management
+>>>>>>> parent of d4f7aca (ok)
 - Add a new flashcard with:
   - front text
   - back text
   - optional tags
   - optional category
-  - optional intent category
 - Edit an existing card
 - Delete a card
 - Mark a card as favorite or starred
 - Bulk import cards from CSV or JSON
-- Allow import/export of category mappings
 
-### 4. Study Mode
+### 3. Study Mode
 - Study cards from one deck at a time
-- Study by category or by full deck
 - Show front side first
 - Flip card to reveal back side
 - Rate answer as:
@@ -60,7 +63,6 @@ A lightweight flashcard application for learning and revising topics through que
   - Easy
 - Move to next card after review
 - Track session progress
-- Show category-specific study stats during a session
 
 ### 4. Progress Tracking
 - Show total cards in deck
@@ -108,8 +110,6 @@ A lightweight flashcard application for learning and revising topics through que
 - back: string
 - tags: string[]
 - category: string
-- intentCategory: string
-- intentTags: string[]
 - createdAt: datetime
 - updatedAt: datetime
 - dueDate: datetime
@@ -117,15 +117,6 @@ A lightweight flashcard application for learning and revising topics through que
 - easeFactor: number
 - reviewCount: number
 - masteryLevel: number
-
-### IntentCategory
-- id: string
-- name: string
-- description: string
-- color: string
-- isCustom: boolean
-- createdAt: datetime
-- cardCount: number
 
 ## Example App Screens
 
@@ -141,27 +132,15 @@ A lightweight flashcard application for learning and revising topics through que
 - Card count
 - Add card button
 - Review button
-- Category filter tabs or dropdown
 - Search cards
-- Filter by intent category
 - Edit/delete controls for cards
-
-### Category Management Page
-- List of all intent categories
-- Add custom category
-- Rename category
-- Delete category
-- View number of cards in each category
-- Assign a color for visual grouping
 
 ### Study Page
 - Card front
-- Category badge indicating intent
 - Flip button
 - Answer reveal
 - Rating buttons
 - Progress indicator
-- Optional “study only selected category” filter
 
 ### Settings Page
 - Theme selection
@@ -186,24 +165,18 @@ A lightweight flashcard application for learning and revising topics through que
 ## Acceptance Criteria
 - User can create at least one deck
 - User can add cards to a deck
-- User can assign an intent category to each card
-- User can create and manage custom categories
-- User can filter cards by category
-- User can study cards in sequence or by category
+- User can study cards in sequence
 - User can flip and reveal the answer
 - User can mark answer difficulty
 - App updates progress after each review
 - User can edit or delete cards
 - UI works on small and large screens
-- Category stats reflect card counts and review progress accurately
 
 ## MVP Scope
 For the first version, focus on:
 - deck creation
 - card creation
-- intent-based categorization
-- category management
-- study mode by full deck or selected category
+- study mode
 - progress tracking
 - simple review scheduling
 
@@ -231,4 +204,4 @@ flashcard-app/
 ```
 
 ## Summary
-This app should feel simple, fast, and focused on daily revision. The core value is helping users learn effectively by turning content into quick, repeatable review sessions with measurable progress. Intent-based categorization adds a stronger learning structure by allowing users to sort cards by their purpose, such as definitions, recall, formulas, or application, so revision becomes more targeted and intentional.
+This app should feel simple, fast, and focused on daily revision. The core value is helping users learn effectively by turning content into quick, repeatable review sessions with measurable progress.

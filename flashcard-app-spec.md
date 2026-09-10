@@ -17,7 +17,7 @@ A lightweight flashcard application for learning and revising topics through que
 - View all decks in a dashboard
 - Search or filter decks by name
 
-### 2. Intent-Based Categorization
+### 2. Intent-Based Categorization 
 - Each card can be assigned to one or more intent categories
 - Categories represent the purpose or context of the content, such as:
   - Vocabulary
@@ -28,6 +28,7 @@ A lightweight flashcard application for learning and revising topics through que
   - Practical application
   - Interview prep
   - Language learning
+  - Others
 - Users can create custom categories
 - Users can rename or delete categories
 - Cards can be filtered by category in the deck view

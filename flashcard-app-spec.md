@@ -19,7 +19,6 @@ A lightweight flashcard application for learning and revising topics through que
 - View all decks in a dashboard
 - Search or filter decks by name
 
-<<<<<<< HEAD
 ### 2. Intent-Based Categorization 
 - Each card can be assigned to one or more intent categories
 - Categories represent the purpose or context of the content, such as:
@@ -39,9 +38,6 @@ A lightweight flashcard application for learning and revising topics through que
 - Category statistics show how many cards are due or mastered in each category
 
 ### 3. Card Management
-=======
-### 2. Card Management
->>>>>>> parent of d4f7aca (ok)
 - Add a new flashcard with:
   - front text
   - back text

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-row">
+          <h1>Flashcards</h1>
+        </div>
+
+        <div class="panel-section">
+          <h2>Decks</h2>
+          <form id="deck-form" class="stack-form">
+            <input id="deck-name" type="text" placeholder="New deck name" maxlength="60" />
+            <button type="submit">Add Deck</button>
+          </form>
+          <ul id="deck-list" class="list"></ul>
+        </div>
+
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Study dashboard</p>
+            <h2 id="selected-deck-name">Select a deck</h2>
+          </div>
+          <div class="topbar-actions">
+            <button id="study-selected" class="primary">Study Selected</button>
+          </div>
+        </header>
+
+        <section id="stats-grid" class="stats-grid"></section>
+
+        <section class="panel">
+          <div class="section-head">
+            <h3>Cards</h3>
+          </div>
+
+          <form id="card-form" class="card-form">
+            <input id="card-front" type="text" placeholder="Front" maxlength="200" required />
+            <textarea id="card-back" placeholder="Back" rows="3" maxlength="500" required></textarea>
+            <button type="submit">Add Card</button>
+          </form>
+
+          <div id="card-list" class="card-list"></div>
+        </section>
+      </main>
+
+      <aside id="study-panel" class="study-panel hidden">
+        <div class="study-header">
+          <h3>Study Session</h3>
+          <button id="close-study" class="mini-btn">Close</button>
+        </div>
+
+        <div id="study-card" class="study-card">
+          <div class="study-meta">
+            <span id="study-progress">0/0</span>
+          </div>
+          <div id="study-front" class="study-front"></div>
+          <div id="study-back" class="study-back hidden"></div>
+          <div class="study-actions">
+            <button id="flip-card">Flip</button>
+            <button id="mark-again" class="danger">Again</button>
+            <button id="mark-hard">Hard</button>
+            <button id="mark-good">Good</button>
+            <button id="mark-easy" class="success">Easy</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

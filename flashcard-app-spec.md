@@ -14,39 +14,16 @@ A lightweight flashcard application for learning and revising topics through que
 
 ### 1. Deck Management
 - Create a new deck
-- Rename a deck
 - Delete a deck
 - View all decks in a dashboard
-- Search or filter decks by name
+- Select a deck to work with
 
-### 2. Intent-Based Categorization 
-- Each card can be assigned to one or more intent categories
-- Categories represent the purpose or context of the content, such as:
-  - Vocabulary
-  - Concept recall
-  - Problem solving
-  - Definitions
-  - Facts and formulas
-  - Practical application
-  - Interview prep
-  - Language learning
-  - Others
-- Users can create custom categories
-- Users can rename or delete categories
-- Cards can be filtered by category in the deck view
-- Study sessions can be limited to one category or multiple categories
-- Category statistics show how many cards are due or mastered in each category
-
-### 3. Card Management
+### 2. Card Management
 - Add a new flashcard with:
   - front text
   - back text
-  - optional tags
-  - optional category
-- Edit an existing card
 - Delete a card
-- Mark a card as favorite or starred
-- Bulk import cards from CSV or JSON
+- View all cards inside the selected deck
 
 ### 3. Study Mode
 - Study cards from one deck at a time
@@ -57,28 +34,20 @@ A lightweight flashcard application for learning and revising topics through que
   - Hard
   - Good
   - Easy
-- Move to next card after review
+- Move to the next card after review
 - Track session progress
 
 ### 4. Progress Tracking
 - Show total cards in deck
-- Show cards reviewed today
-- Show mastery percentage
-- Show streaks or review consistency
-- Show due cards for review
+- Show number of reviewed cards
+- Show due cards count
+- Show mastery percentage based on review activity
 
-### 5. Spaced Repetition (Optional but Recommended)
-- Schedule review based on rating
-- Reintroduce difficult cards more often
-- Defer easy cards to later
-- Show due cards first
-
-### 6. User Experience
+### 5. User Experience
 - Clean and minimal UI
-- Clear buttons for review actions
-- Keyboard shortcuts support
-- Responsive design for mobile and desktop
-- Dark mode option
+- Clear buttons for card review actions
+- Responsive layout for desktop and smaller screens
+- Local persistence using browser storage
 
 ## Suggested User Flow
 1. User creates a deck
@@ -94,25 +63,15 @@ A lightweight flashcard application for learning and revising topics through que
 ### Deck
 - id: string
 - name: string
-- description: string
-- createdAt: datetime
-- updatedAt: datetime
-- cardCount: number
+- cards: Card[]
 
 ### Card
 - id: string
-- deckId: string
 - front: string
 - back: string
-- tags: string[]
-- category: string
 - createdAt: datetime
-- updatedAt: datetime
 - dueDate: datetime
-- intervalDays: number
-- easeFactor: number
 - reviewCount: number
-- masteryLevel: number
 
 ## Example App Screens
 
@@ -127,9 +86,8 @@ A lightweight flashcard application for learning and revising topics through que
 - Deck name
 - Card count
 - Add card button
-- Review button
-- Search cards
-- Edit/delete controls for cards
+- Study button
+- Delete card action
 
 ### Study Page
 - Card front
@@ -138,66 +96,60 @@ A lightweight flashcard application for learning and revising topics through que
 - Rating buttons
 - Progress indicator
 
-### Settings Page
-- Theme selection
-- Review defaults
-- Notification preferences
-- Data export/import
-
 ## Technical Considerations
-- Use a local-first storage approach for simplicity
-- Support browser storage or a lightweight backend database
-- Keep JSON or SQLite as data store options
-- Ensure card data is easy to export/import
+- Use browser localStorage for persistence
+- Keep the app simple and lightweight
+- Support multiple decks with independent card sets
+- Maintain a small and fast single-page interface
 
 ## Nice-to-Have Features
-- Audio pronunciation support
-- Image support on cards
-- Deck sharing
-- AI-generated flashcards from notes
-- Import from PDF, text, or markdown
-- Learning analytics charts
+- card editing
+- deck renaming
+- improved spaced repetition tuning
+- CSV export/import
+- better analytics and review history
 
 ## Acceptance Criteria
 - User can create at least one deck
 - User can add cards to a deck
+- User can delete cards
 - User can study cards in sequence
 - User can flip and reveal the answer
-- User can mark answer difficulty
+- User can rate answer quality
 - App updates progress after each review
-- User can edit or delete cards
 - UI works on small and large screens
 
 ## MVP Scope
 For the first version, focus on:
 - deck creation
-- card creation
-- study mode
+- card creation and deletion
+- simple study mode
 - progress tracking
-- simple review scheduling
+- local persistence
 
 ## Future Enhancements
-- spaced repetition algorithm tuning
-- mobile app version
+- deck rename functionality
+- card editing
+- smarter review scheduling
 - cloud sync across devices
-- AI-created flashcards from imported content
-- collaborative deck sharing
+- richer statistics and analytics
 
-## Suggested Project Structure
+## Technology Stack
+- HTML5 for app structure
+- CSS3 for styling and responsive layout
+- Vanilla JavaScript for app logic and state handling
+- Browser localStorage for persistent deck and card data
+- No backend, database, or framework required for the current MVP
+
+## Project Structure
 ```text
 flashcard-app/
-  src/
-    components/
-    pages/
-    hooks/
-    utils/
-    services/
-    types/
-  public/
-  data/
+  index.html
+  styles.css
+  app.js
   README.md
-  package.json
+  flashcard-app-spec.md
 ```
 
 ## Summary
-This app should feel simple, fast, and focused on daily revision. The core value is helping users learn effectively by turning content into quick, repeatable review sessions with measurable progress.
+This app is a lightweight flashcard study tool focused on simple, fast revision. The final implementation supports creating decks, adding cards, and studying them in sequence with a review workflow. It keeps the experience focused and portable by storing all data locally in the browser and prioritizing usability over complex advanced features.
